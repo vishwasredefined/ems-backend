@@ -3,6 +3,8 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+COPY resolv.conf /etc/resolv.conf
+
 COPY package*.json .
 
 RUN apk update && apk add --update git 
