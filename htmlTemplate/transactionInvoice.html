@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Receipt</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+      table {
+        margin: auto;
+        border: 0px;
+        width: 100%;
+      }
+      h1,
+      p {
+        margin: 0;
+      }
+      .wrapper {
+        width: 750px;
+        height: auto;
+        margin: auto;
+        border: 3px #ccc solid;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 3px;
+      }
+      p {
+        font-size: 10px;
+        line-height: 18px;
+      }
+ 
+      .con-btn {
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 10px;
+        padding: 5px 10px;
+        color: #fff;
+        background-color: #000 !important;
+        -webkit-print-color-adjust: exact !important;
+        width: 150px;
+        margin: auto;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <div class="wrapper">
+            <!-- <img
+              src="https://helpdesk.oshodhara.org.in/assets/img/favicon0.png" style="width:73px; float:left"
+              style="width: 80px; float: left"
+            /> -->
+            <h1
+              style="
+                text-align: center;
+                font-size: 18px;
+                font-weight: 800;
+                text-transform: uppercase;
+              "
+            >
+              EMS 
+            </h1>
+            <!-- <p align="center">
+              50TH K.M. MILESTONE, N.H. - 1 VILLAGE MURTHAL, SONEPAT,
+              HARYANA-131027<br />
+              <strong>PHONE: </strong>0130-2483911,0130-2483912
+            </p> -->
+            <p class="con-btn">Pass Purchase</p>
+            <table style="margin-top:45px">
+              <tr>
+                <!-- <td>
+                  <p>Diary No: <strong>{{diaryNo}}</strong></p>
+                </td> -->
+              
+               
+              </tr>
+            </table>
+            <div style="margin-top: 20px">
+              <table align="left">
+                <tr>
+                  <td colspan="3">
+                    <p style="text-align: left">
+                      Invoice: <strong>{{invoiceNumber}}</strong>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <p>
+                      Received with thanks from:&nbsp;
+                      <strong>{{username}}</strong>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <table>
+                      <tr>
+                        <td>
+                          <p style="margin-left: -2px;">
+							Phone No:&nbsp; 
+							<strong>{{mobile}}</strong>
+						</p>
+                        </td>
+
+                        <td>
+                          <p style="text-align: right">
+                            Dated:
+                            <strong>{{date}}</strong>
+                          </p>
+                        </td>
+                       
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>a sum:&nbsp; <strong>{{amountInWords}}</strong></p>
+                  </td>
+                 
+                </tr>
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <p style="margin-left: -2px;">by Transaction No:&nbsp; <strong>{{shortTranId}}</strong></p>
+                        </td>
+                       
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td>
+                    <div
+                      style="
+                        padding: 7px 10px;
+                        width: 100px;
+                        border: 1px solid;
+                        margin-top: 5px;
+                        border-radius: 8px;
+                        text-align: center;
+                      "
+                    >
+                      <span style="font-size: 12px"
+                        >{{currencyType}} <strong>{{amount}} /-</strong></span
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <td>
+                    <p style="margin-top: 5px">
+                      Note : Invited to attend:&nbsp;
+                      <strong>{{title}} </strong>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      From &nbsp;
+                      <strong>{{startDate}}</strong>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To &nbsp;
+                      <strong> {{endDate}} </strong>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p style="text-align:left">
+                      Place:
+                      <strong> {{addressLineOne}}, {{state}}</strong>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div style="clear: both"></div>
+            <p align="center" style="margin-top: 30px">
+              This is computer generated invoice no signature required
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+</html>

@@ -1,0 +1,39 @@
+image: node:20-bullseye
+
+pipelines:
+  branches:
+    master:
+      - step:
+         name: Pull the Code Base and Install Dependencies
+         script:
+          - npm install
+         artifacts:
+          - /opt/atlassian/pipelines/agent/build/**
+      - step:
+         name: Deploy dist artifacts using SCP
+         deployment: production
+         script:
+          - pipe: atlassian/scp-deploy:0.3.3
+            variables:
+              USER: $USER
+              SERVER: $SERVER
+              REMOTE_PATH: '/home/ubuntu/ems-backend'
+              LOCAL_PATH: '/opt/atlassian/pipelines/agent/build/**'
+      - step:
+           name: Connect to remote Server and execute rest of the Commands
+           script:
+            - pipe: atlassian/ssh-run:0.3.0
+              variables:
+               SSH_USER: $USER
+               SERVER: $SERVER
+               COMMAND: 'cd /home/ubuntu/ems-backend ; echo Haxoor92! | sudo -S npm install nodemon -g ; echo Haxoor92! | sudo -S  npm install mongoose ; echo Haxoor92! | sudo -S npm install pm2 -g ; echo Haxoor92! | sudo -S  pm2 start app.js' 
+      - step:
+           name: Notify via Email
+           script:
+           - pipe: atlassian/email-notify:0.13.1
+             variables:
+              USERNAME: 'viswash@ith.tech'
+              PASSWORD: $EMAIL_PASSWORD
+              FROM: 'viswash@ith.tech'
+              TO: 'vishwas920407@gmail.com'
+              HOST: 'smtp.gmail.com'
