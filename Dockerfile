@@ -9,7 +9,7 @@ COPY package*.json .
 
 RUN apk update && apk add --update git 
 
-RUN npm install --verbose
+RUN npm install 
 
 COPY . .
 
